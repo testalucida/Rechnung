@@ -130,7 +130,7 @@ void TreeHandler::selectRechnungParent( int renr ) {
 Fl_Tree_Item *TreeHandler::getTreeItem( int renr ) const {
     for( Fl_Tree_Item *pItem = _tree.first(); pItem; pItem = _tree.next( pItem ) ) {
         RechnungKenndaten *pKenn = (RechnungKenndaten*)pItem->user_data();
-        if( pKenn->renr == renr ) {
+        if( pKenn && pKenn->renr == renr ) {
             return pItem;
         }
     }   

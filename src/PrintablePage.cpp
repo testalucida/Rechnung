@@ -179,7 +179,7 @@ FirstPrintablePage::FirstPrintablePage( int x, int y ) : PrintablePage( x, y ) {
     createAbsender( x+_leftMargin, y+100 );
     createAdresse();
     createDatumReNr();
-    createMeineBemuehungen();  
+    //createMeineBemuehungen();  
     createEinschraenkung();
  
     end();  
@@ -270,7 +270,8 @@ int FirstPrintablePage::getVerticalSpace() const {
 
 int FirstPrintablePage::getNextY() const {
     if( _leistungen.empty() ) {
-        return _pMeineBemuehungen->y() + _pMeineBemuehungen->h() + _distV;
+        //return _pMeineBemuehungen->y() + _pMeineBemuehungen->h() + _distV;
+        return _pDatum_ReNr->y() + _pDatum_ReNr->h() +  50;
     } else {
         std::vector< RechnungPosGroupPrint* >::const_iterator itr = 
                 _leistungen.begin() + _leistungen.size() - 1;

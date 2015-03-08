@@ -72,6 +72,8 @@ void PrintHandler::createPrintablePages( const Rechnung &rechng ) {
                            rechng.getRejahr(),rechng.getRenr() );
     
     int cntLeistg = 0;
+    
+    first.addLeistung( rechng.getText() );
 //    for( int maxLeistg = first.getMaxLeistungen(); 
 //            cntLeistg < maxLeistg && cntLeistg < rechng.getPosCount(); 
 //            cntLeistg++ )
